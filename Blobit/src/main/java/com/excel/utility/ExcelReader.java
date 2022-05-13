@@ -14,48 +14,42 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelReader {
-	
+
 	XSSFWorkbook wb;
 	static XSSFSheet sheet1;
-	
-	/*public ExcelReader(String excelpath)
-	{
-		
-		try {
-			File src= new File(excelpath);
-			FileInputStream fis=new FileInputStream(src);
 
-			
-			XSSFWorkbook wb=new XSSFWorkbook(fis);
-			
-			//HSSFWorkbook hb
-			XSSFSheet sheet1=wb.getSheetAt(0);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-	}
-	
-	public String getData(String sheetName,int row,int col)
-	{
-		sheet1=wb.getSheet(sheetName);
-		String data=sheet1.getRow(row).getCell(col).getStringCellValue();
-		return data;
-	}*/
+	/*
+	 * public ExcelReader(String excelpath) {
+	 * 
+	 * try { File src= new File(excelpath); FileInputStream fis=new
+	 * FileInputStream(src);
+	 * 
+	 * 
+	 * XSSFWorkbook wb=new XSSFWorkbook(fis);
+	 * 
+	 * //HSSFWorkbook hb XSSFSheet sheet1=wb.getSheetAt(0); } catch (Exception e) {
+	 * // TODO Auto-generated catch block e.printStackTrace(); }
+	 * 
+	 * }
+	 * 
+	 * public String getData(String sheetName,int row,int col) {
+	 * sheet1=wb.getSheet(sheetName); String
+	 * data=sheet1.getRow(row).getCell(col).getStringCellValue(); return data; }
+	 */
 
 	public static Object[][] getTestData(String sheetName) throws InvalidFormatException {
-		//Sheet sheet;
-		Workbook book=null;
-		
+		// Sheet sheet;
+		Workbook book = null;
+
 		FileInputStream file = null;
-		try { 
-			file = new FileInputStream("//Users/sneharajkumarswami/eclipse-workspace/Blobit/src/main/java/config/BlobitNew.xlsx");
+		try {
+			file = new FileInputStream(
+					"/Users/sneharajkumarswami/git/FirstRepBlobit/Blobit/src/main/java/config/BlobitNew.xlsx");
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
 		try {
-			 try {
+			try {
 				book = WorkbookFactory.create(file);
 			} catch (EncryptedDocumentException e) {
 				// TODO Auto-generated catch block
@@ -65,9 +59,9 @@ public class ExcelReader {
 			e.printStackTrace();
 		}
 		sheet1 = (XSSFSheet) book.getSheet("Sheet1");
-		//sheet1=book.getSheet(“Login”);
+		// sheet1=book.getSheet(“Login”);
 		Object[][] data = new Object[sheet1.getLastRowNum()][sheet1.getRow(0).getLastCellNum()];
-		//System.out.println(sheet.getLastRowNum() +“--------” );
+		// System.out.println(sheet.getLastRowNum() +“--------” );
 		// sheet.getRow(0).getLastCellNum());
 		for (int i = 0; i < sheet1.getLastRowNum(); i++) {
 			for (int k = 0; k < sheet1.getRow(0).getLastCellNum(); k++) {
@@ -77,8 +71,5 @@ public class ExcelReader {
 		}
 		return data;
 	}
-	
-	
-	
 
 }

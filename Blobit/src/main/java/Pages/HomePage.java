@@ -1,5 +1,6 @@
 package Pages;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
@@ -10,8 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 import config.PropertiesFile;
 
 public class HomePage extends PropertiesFile {
-	//public static WebDriver driver;
-	
+	// public static WebDriver driver;
 
 	// Initialzing the page objects:
 
@@ -30,17 +30,17 @@ public class HomePage extends PropertiesFile {
 
 	@FindBy(xpath = "//input[@id='email']")
 	public WebElement Emailaddress;
-	
-	@FindBy(xpath="//input[@id='password']")
+
+	@FindBy(xpath = "//input[@id='password']")
 	public WebElement Password;
-	
-	@FindBy(xpath="//button[contains(text(),'LOGIN')]")
+
+	@FindBy(xpath = "//button[contains(text(),'LOGIN')]")
 	public WebElement loginbtn;
-	
-	@FindBy(xpath="//button[contains(text(),'sneha')]")
-public WebElement selectstudent;
+
+	@FindBy(xpath = "//button[contains(text(),'sneha')]")
+	public WebElement selectstudent;
 	// actions
-	
+
 	public String varifySearchPageTitle(WebDriver driver) {
 		return driver.getTitle();
 	}
@@ -48,8 +48,7 @@ public WebElement selectstudent;
 	public void SignInEmail() throws InterruptedException {
 		signinwithemail.click();
 		Thread.sleep(3000);
-		
-	
+
 		// String expected = Welcome snehar@geekyants.com;
 		// String actual = signinwithemail.getText();
 		// System.out.println("Compared");
@@ -65,48 +64,38 @@ public WebElement selectstudent;
 
 	}
 
-	public void EmailAddText() throws InterruptedException {
+	public void EmailAddText() {
 		Emailaddress.click();
-		Thread.sleep(3000);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		// Emailaddress.clear();
-		//Emailaddress.sendKeys("Snehar@geekyants.com");
-		//String expected = emailid;
-		//String actual = signinwithemail.getText();
-		//System.out.println("Compared");
-		//System.out.print("  " + actual + " " + signinwithemail.getText());
+		// Emailaddress.sendKeys("Snehar@geekyants.com");
+		// String expected = emailid;
+		// String actual = signinwithemail.getText();
+		// System.out.println("Compared");
+		// System.out.print(" " + actual + " " + signinwithemail.getText());
 
 	}
-	
-	public void EnterPassword() throws InterruptedException
-	{
+
+	public void EnterPassword() {
 		Password.click();
-		Thread.sleep(3000);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 	}
-	
-	public void clickonLogin() throws InterruptedException
-	{
+
+	public void clickonLogin() {
 		loginbtn.click();
-		Thread.sleep(2000);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 	}
 
-	public void SignInGoogleAcc() throws InterruptedException {
+	public void SignInGoogleAcc() {
 		signinwithgoogle.click();
-		// signinwithgmail.sendKeys(Gemailid);
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
 	}
-	
-	public void clickstudent() throws InterruptedException {
+
+	public void clickstudent() {
 		selectstudent.click();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 	}
 
-	
-
-	
-
-	
 }
-
-
-
