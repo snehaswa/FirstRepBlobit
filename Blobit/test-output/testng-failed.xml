@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Blobit_DDF.Blobit.HomeTest">
+      <class name="ExtentReportListener.ExtentReportnew">
         <methods>
-          <include name="loginTest" invocation-numbers="0"/>
-          <include name="setUp"/>
+          <include name="endTest"/>
+          <include name="extentReportsDemo"/>
+          <include name="startTest"/>
         </methods>
-      </class> <!-- Blobit_DDF.Blobit.HomeTest -->
+      </class> <!-- ExtentReportListener.ExtentReportnew -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
