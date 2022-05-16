@@ -38,7 +38,7 @@ public PropertiesFile(){
 		
 		try {
 			InputStream input = new FileInputStream(
-					"/Users/sneharajkumarswami/eclipse-workspace/Blobit/src/main/java/config/config.properties");
+					"/Users/sneharajkumarswami/git/FirstRepBlobit/Blobit/src/main/java/config");
 		
 			
 			prop.load(input);

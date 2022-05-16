@@ -1,5 +1,6 @@
 package Pages;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
@@ -47,7 +48,7 @@ public WebElement selectstudent;
 
 	public void SignInEmail() throws InterruptedException {
 		signinwithemail.click();
-		Thread.sleep(3000);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
 		
 	
 		// String expected = Welcome snehar@geekyants.com;
@@ -65,9 +66,9 @@ public WebElement selectstudent;
 
 	}
 
-	public void EmailAddText() throws InterruptedException {
+	public void EmailAddText() {
 		Emailaddress.click();
-		Thread.sleep(3000);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		// Emailaddress.clear();
 		//Emailaddress.sendKeys("Snehar@geekyants.com");
 		//String expected = emailid;
@@ -77,28 +78,30 @@ public WebElement selectstudent;
 
 	}
 	
-	public void EnterPassword() throws InterruptedException
+	public void EnterPassword() 
 	{
 		Password.click();
-		Thread.sleep(3000);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
 	}
 	
-	public void clickonLogin() throws InterruptedException
+	public void clickonLogin() 
 	{
 		loginbtn.click();
-		Thread.sleep(2000);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 	}
 
-	public void SignInGoogleAcc() throws InterruptedException {
+	public void SignInGoogleAcc() 
+ {
 		signinwithgoogle.click();
 		// signinwithgmail.sendKeys(Gemailid);
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
 	}
 	
-	public void clickstudent() throws InterruptedException {
+	public void clickstudent()
+ {
 		selectstudent.click();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 	}
 
 	

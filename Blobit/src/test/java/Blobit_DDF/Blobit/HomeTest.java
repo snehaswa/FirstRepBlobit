@@ -30,23 +30,20 @@ public class HomeTest extends PropertiesFile {
 
 	}
 
-	
-
 	@Test(dataProvider = "LoginData")
 	public void loginTest(String userid, String pwd) throws InterruptedException {
 
-		// System.out.println(userid);
 		HomePage hp = new HomePage();
 		hp.varifySearchPageTitle(driver);
 		hp.signinwithemail.click();
 		hp.Emailaddress.sendKeys(userid);
 		hp.Password.sendKeys(pwd);
-		//hp.signinwithgoogle.click();
+
 		hp.clickonLogin();
-		LoginPage lp=new LoginPage();
+		LoginPage lp = new LoginPage();
 		String expected = "Welcome snehar@geekyants.com";
 		String actual = driver.getTitle();
-		String title=lp.getdisplayedTitle();
+		String title = lp.getdisplayedTitle();
 		Assert.assertEquals(expected, title);
 
 		try {
@@ -55,10 +52,9 @@ public class HomeTest extends PropertiesFile {
 
 			e.printStackTrace();
 		}
-		
-	}
+		lp.clickstudent();
 
-		
+	}
 
 	// @DataProvider(name="LoginData")
 	/*

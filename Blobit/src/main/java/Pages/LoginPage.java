@@ -18,6 +18,34 @@ public class LoginPage extends PropertiesFile {
 	@FindBy(xpath = "//*[contains(text(),'Welcome snehar@geekyants.com')]")
 	public WebElement Title;
 
+	
+	@FindBy(xpath="//button[contains(text(),'Sneha')]")
+	public WebElement SelectStudent;
+	
+	@FindBy(xpath="//h3[@class='navbar-heading-text']")
+	public WebElement Title2;
+	
+	@FindBy(xpath="//button[contains(text(),'Logout')]")
+	public WebElement Signout;
+	
+	
+	
+	public void clickstudent() {
+		SelectStudent.click();
+	}
+	
+	public void VerifyTitle() {
+		String s=Title2.getText();
+		System.out.println("title 2 is"+s);
+		String Exp=" Sneha's  Profile";
+		Assert.assertEquals(s, Exp);
+	}
+	
+	public void LogOut() {
+		Signout.click();
+		
+	}
+	
 	public String getdisplayedTitle() {
 		return actual;
 		
@@ -41,7 +69,7 @@ public class LoginPage extends PropertiesFile {
 	
 	{
 		System.out.println("Compared");
-//(" "+actual+" "+signinwithemail.getText());
+/*//(" "+actual+" "+signinwithemail.getText());
 
 		if (expected.equals(actual)) {
 			System.out.println("Pass");
@@ -53,7 +81,9 @@ public class LoginPage extends PropertiesFile {
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}*/
+		
+		
 	}
 	
 }
