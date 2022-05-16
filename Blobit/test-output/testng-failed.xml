@@ -5,7 +5,7 @@
     <classes>
       <class name="Blobit_DDF.Blobit.HomeTest">
         <methods>
-          <include name="loginTest"/>
+          <include name="loginTest" invocation-numbers="0"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- Blobit_DDF.Blobit.HomeTest -->

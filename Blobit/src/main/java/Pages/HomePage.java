@@ -48,7 +48,7 @@ public WebElement selectstudent;
 
 	public void SignInEmail() throws InterruptedException {
 		signinwithemail.click();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		
 	
 		// String expected = Welcome snehar@geekyants.com;
@@ -81,13 +81,13 @@ public WebElement selectstudent;
 	public void EnterPassword() 
 	{
 		Password.click();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(4));
 	}
 	
 	public void clickonLogin() 
 	{
 		loginbtn.click();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(9));
 	}
 
 	public void SignInGoogleAcc() 

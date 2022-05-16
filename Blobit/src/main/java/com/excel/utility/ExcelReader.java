@@ -50,7 +50,7 @@ public class ExcelReader {
 		
 		FileInputStream file = null;
 		try { 
-			file = new FileInputStream("//Users/sneharajkumarswami/eclipse-workspace/Blobit/src/main/java/config/BlobitNew.xlsx");
+			file = new FileInputStream("/Users/sneharajkumarswami/git/FirstRepBlobit/Blobit/src/main/java/config/BlobitNew.xlsx");
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}

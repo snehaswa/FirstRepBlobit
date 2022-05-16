@@ -42,16 +42,11 @@ public class ExtentReportNew {
 		// creates a toggle for the given test, adds all log events under it
 		ExtentTest test = extent.createTest("MyFirstTest", "Sample description");
 
-		//test.log(Status.values(), "This step shows usage of log(status, details)");
+		// test.log(Status.values(), "This step shows usage of log(status, details)");
 
 		test.info("This step shows usage of info(details)");
 
-			}
-
-	
-
-	
-
+	}
 
 	public static String getScreenshot(WebDriver driver, String screenshotName) throws IOException {
 		String dateName = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
@@ -65,8 +60,6 @@ public class ExtentReportNew {
 		FileUtils.copyFile(source, finalDestination);
 		return destination;
 	}
-
-
 
 	@AfterSuite()
 	public void tearDown() {

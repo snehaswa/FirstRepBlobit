@@ -41,18 +41,21 @@ public class HomeTest extends PropertiesFile {
 
 		hp.clickonLogin();
 		LoginPage lp = new LoginPage();
-		String expected = "Welcome snehar@geekyants.com";
+		/*String expected = "Welcome snehar@geekyants.com";
 		String actual = driver.getTitle();
-		String title = lp.getdisplayedTitle();
-		Assert.assertEquals(expected, title);
+		//String title = lp.getdisplayedTitle();
+		Assert.assertEquals(expected, actual);
 
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
 
 			e.printStackTrace();
-		}
+		}*/
 		lp.clickstudent();
+	
+		lp.VerifyTitle();
+		lp.LogOut();
 
 	}
 

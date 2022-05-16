@@ -2,6 +2,8 @@ package Pages;
 
 import static org.testng.Assert.assertEquals;
 
+import java.time.Duration;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -32,13 +34,15 @@ public class LoginPage extends PropertiesFile {
 	
 	public void clickstudent() {
 		SelectStudent.click();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
 	}
 	
 	public void VerifyTitle() {
 		String s=Title2.getText();
 		System.out.println("title 2 is"+s);
-		String Exp=" Sneha's  Profile";
+		String Exp=" Sneha's Profile";
 		Assert.assertEquals(s, Exp);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
 	}
 	
 	public void LogOut() {
@@ -46,14 +50,14 @@ public class LoginPage extends PropertiesFile {
 		
 	}
 	
-	public String getdisplayedTitle() {
-		return actual;
+	//public String getdisplayedTitle() {
+		//return actual;
 		
 		//System.out.println("title is: "+Title.getText());
 		// String titleHomePage=HomePage.validatingHomePageTitle();
 		// Assert.assertEquals(titleHomePage, “topgeek | UpSkill • Jobs • Dev
 		// Community”);
-	}
+	
 
 	/*
 	 * { String TitleName=Title.getText();
@@ -65,7 +69,7 @@ public class LoginPage extends PropertiesFile {
 	 */
 	
 	String expected = "Welcome snehar@geekyants.com";
-	String actual = Title.getText();
+	//String actual = Title.getText();
 	
 	{
 		System.out.println("Compared");
